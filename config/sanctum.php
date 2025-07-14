@@ -31,7 +31,16 @@ return [
     |
     */
 
-    'guard' => ['web'],
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        "api" => [
+            'driver' => 'sanctum',
+            'provider' => 'users' // Make sure your provider is users and it's well constructed and configured in your project
+        ]
+    ],
 
     /*
     |--------------------------------------------------------------------------

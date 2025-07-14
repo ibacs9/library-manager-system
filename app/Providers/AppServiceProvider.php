@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Repositories\UserRepositoryInterface;
+use App\Repositories\UserRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            \App\Repositories\BookRepositoryInterface::class,
+            \App\Repositories\BookRepository::class
+        );
+
+        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->bind(\App\Repositories\BookRentalRepositoryInterface::class, \App\Repositories\BookRentalRepository::class);
+        $this->app->bind(\App\Repositories\BookUserProgressRepositoryInterface::class, \App\Repositories\BookUserProgressRepository::class);
     }
 
     /**
