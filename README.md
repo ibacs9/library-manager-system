@@ -16,14 +16,14 @@ Ez egy online könyvkölcsönző rendszer, amit Laravel backenddel és Vue.js fr
 - Laravel 10
 - Vue 3 + Vite
 - MySQL
-- Tailwind CSS
+- Bootstrap ,Tailwind CSS
 - Laravel Sanctum (tokenes autentikáció)
 
 ## 🛠 Telepítés
 
 1. **Backend:**
 ```bash
-git clone https://github.com/felhasznalo/konyvtar.git
+git clone 
 cd backend
 composer install
 cp .env.example .env
